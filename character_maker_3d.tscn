@@ -1,0 +1,109 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4hfrgt6w3ehc"]
+
+[ext_resource type="Script" path="res://CharacterMaker3D.gd" id="1_xr7nw"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ki8wy"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_3wmhk"]
+sky_material = SubResource("ProceduralSkyMaterial_ki8wy")
+
+[sub_resource type="Environment" id="Environment_d2a4q"]
+background_mode = 2
+sky = SubResource("Sky_3wmhk")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="CharacterMaker3D" type="Node3D"]
+script = ExtResource("1_xr7nw")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_d2a4q")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.749337, 0.555427, -0.360547, 0, 0.544478, 0.838775, 0.662189, -0.628525, 0.407998, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.601184, 0.974103)
+
+[node name="Character" type="Node3D" parent="."]
+
+[node name="Face" type="Node3D" parent="Character"]
+
+[node name="Hair" type="Node3D" parent="Character"]
+
+[node name="Eyes" type="Node3D" parent="Character"]
+
+[node name="Mouth" type="Node3D" parent="Character"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="UI" type="BoxContainer" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HairOption" type="HBoxContainer" parent="UI/UI"]
+layout_mode = 2
+
+[node name="LabelHair" type="Label" parent="UI/UI/HairOption"]
+layout_mode = 2
+text = "Hair"
+
+[node name="HairLeft" type="Button" parent="UI/UI/HairOption"]
+layout_mode = 2
+
+[node name="HairRight" type="Button" parent="UI/UI/HairOption"]
+layout_mode = 2
+
+[node name="EyesOption" type="HBoxContainer" parent="UI/UI"]
+layout_mode = 2
+
+[node name="LabelEyes" type="Label" parent="UI/UI/EyesOption"]
+layout_mode = 2
+text = "Eyse"
+
+[node name="EyesLeft" type="Button" parent="UI/UI/EyesOption"]
+layout_mode = 2
+
+[node name="EyesRight" type="Button" parent="UI/UI/EyesOption"]
+layout_mode = 2
+
+[node name="MouthOption" type="HBoxContainer" parent="UI/UI"]
+layout_mode = 2
+
+[node name="LabelMouth" type="Label" parent="UI/UI/MouthOption"]
+layout_mode = 2
+text = "Mouth"
+
+[node name="MouthLeft" type="Button" parent="UI/UI/MouthOption"]
+layout_mode = 2
+
+[node name="MouthRight" type="Button" parent="UI/UI/MouthOption"]
+layout_mode = 2
+
+[node name="FaceOption" type="HBoxContainer" parent="UI/UI"]
+layout_mode = 2
+
+[node name="LabelFace" type="Label" parent="UI/UI/FaceOption"]
+layout_mode = 2
+text = "Face"
+
+[node name="FaceLeft" type="Button" parent="UI/UI/FaceOption"]
+layout_mode = 2
+
+[node name="FaceRight" type="Button" parent="UI/UI/FaceOption"]
+layout_mode = 2
+
+[connection signal="button_down" from="UI/UI/HairOption/HairLeft" to="." method="_on_hair_left_pressed"]
+[connection signal="button_down" from="UI/UI/HairOption/HairRight" to="." method="_on_hair_right_pressed"]
+[connection signal="button_down" from="UI/UI/EyesOption/EyesLeft" to="." method="_on_eyes_left_pressed"]
+[connection signal="button_down" from="UI/UI/EyesOption/EyesRight" to="." method="_on_eyes_right_pressed"]
+[connection signal="button_down" from="UI/UI/MouthOption/MouthLeft" to="." method="_on_mouth_left_pressed"]
+[connection signal="button_down" from="UI/UI/MouthOption/MouthRight" to="." method="_on_mouth_right_pressed"]
+[connection signal="button_down" from="UI/UI/FaceOption/FaceLeft" to="." method="_on_face_letf_prossed"]
+[connection signal="button_down" from="UI/UI/FaceOption/FaceRight" to="." method="_on_face_right_pressed"]

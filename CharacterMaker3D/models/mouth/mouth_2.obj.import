@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://gerchhh5r2ex"
+path="res://.godot/imported/mouth_2.obj-732366db0d962b8c263acbb66c4dcb3b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/mouth_2.obj-732366db0d962b8c263acbb66c4dcb3b.mesh"]
+
+source_file="res://CharacterMaker3D/models/mouth/mouth_2.obj"
+dest_files=["res://.godot/imported/mouth_2.obj-732366db0d962b8c263acbb66c4dcb3b.mesh", "res://.godot/imported/mouth_2.obj-732366db0d962b8c263acbb66c4dcb3b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
